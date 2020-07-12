@@ -27,6 +27,11 @@
         "course_id": "dashboard",
         "title": "dashboard",
         "description": "这里讲解了Arthas的dashboard命令"
+      },
+      {
+        "course_id": "jvm",
+        "title": "jvm",
+        "description": "这里讲解了Arthas的jvm命令"
       }
     ]
 }

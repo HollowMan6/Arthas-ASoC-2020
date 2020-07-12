@@ -1,13 +1,9 @@
-jvm
-===
 
-[Click to visit "jvm" online tutorial](https://alibaba.github.io/arthas/arthas-tutorials.html?language=en&id=arthas+jvm)
+The `jvm`{{execute T2}} command allows you to check the current JVM’s info.
 
-> Check the current JVM's info
+## Usage
 
-### Usage
-
-```
+```bash
 $ jvm
  CATEGORY            INFO
 ------------------------------------------------------------------------------------------------------------------------------------
@@ -71,7 +67,6 @@ $ jvm
                                          PS Survivor Space
                                          PS Old Gen
 
-
  MEMORY               HEAP-MEMORY-USAGE          186646528/134217728/1908932608/31245568
                       [committed/init/max/used]
                       NO-HEAP-MEMORY-USAGE       35520512/2555904/-1/34584616
@@ -97,16 +92,24 @@ $ jvm
 Affect cost in 2 ms.
 ```
 
+Enter `Q`{{execute T2}} or `Ctrl+C` to exit the dashboard command.
+
+## Notes on column headers
+
 ### Thread related
 
-* COUNT: the count of active threads 
-* DAEMON-COUNT: the count of active daemon threads
-* PEAK-COUNT: the maximum count of the live threads since JVM starts
-* STARTED-COUNT: the total count of the created threads since JVM starts
-* DEADLOCK-COUNT: the count of deadlocked threads 
+* `COUNT`: the count of active threads
 
+* `DAEMON-COUNT`: the count of active daemon threads
+
+* `PEAK-COUNT`: the maximum count of the live threads since JVM starts
+
+* `STARTED-COUNT`: the total count of the created threads since JVM starts
+
+* `DEADLOCK-COUNT`: the count of deadlocked threads
 
 ### File descriptor related
 
-* MAX-FILE-DESCRIPTOR-COUNT：the count of max file descriptor JVM process can open
-* OPEN-FILE-DESCRIPTOR-COUNT：the current count of file descriptor JVM process open
+* `MAX-FILE-DESCRIPTOR-COUNT`：the count of max file descriptor JVM process can open
+
+* `OPEN-FILE-DESCRIPTOR-COUNT`：the current count of file descriptor JVM process open

@@ -1,13 +1,9 @@
-jvm
-===
 
-[Click to visit "jvm" online tutorial](https://alibaba.github.io/arthas/arthas-tutorials.html?language=en&id=arthas+jvm)
+`jvm`{{execute T2}} 命令可以查看当前JVM信息。
 
-> Check the current JVM's info
+## 使用参考
 
-### Usage
-
-```
+```bash
 $ jvm
  CATEGORY            INFO
 ------------------------------------------------------------------------------------------------------------------------------------
@@ -71,10 +67,9 @@ $ jvm
                                          PS Survivor Space
                                          PS Old Gen
 
-
- MEMORY               HEAP-MEMORY-USAGE          186646528/134217728/1908932608/31245568
+ MEMORY               HEAP-MEMORY-USAGE          1073741824(1.00 GiB)/1073741824(1.00 GiB)/5242880000(4.88 GiB)/278637584(265.73 MiB)
                       [committed/init/max/used]
-                      NO-HEAP-MEMORY-USAGE       35520512/2555904/-1/34584616
+                      NO-HEAP-MEMORY-USAGE       172597248(164.60 MiB)/2555904(2.44 MiB)/1862270976(1.73 GiB)/166521144(158.81 MiB)
                       [committed/init/max/used]
                       PENDING-FINALIZE-COUNT     0
 
@@ -89,24 +84,32 @@ $ jvm
                       PEAK-COUNT     18
                       STARTED-COUNT  19
                       DEADLOCK-COUNT  0
-                      
+
  FILE-DESCRIPTOR
  
                       MAX-FILE-DESCRIPTOR-COUNT  10240
                       OPEN-FILE-DESCRIPTOR-COUNT 648
+                      
 Affect cost in 2 ms.
 ```
 
-### Thread related
 
-* COUNT: the count of active threads 
-* DAEMON-COUNT: the count of active daemon threads
-* PEAK-COUNT: the maximum count of the live threads since JVM starts
-* STARTED-COUNT: the total count of the created threads since JVM starts
-* DEADLOCK-COUNT: the count of deadlocked threads 
+## 数据说明
 
+### THREAD相关
 
-### File descriptor related
+* `COUNT`: JVM当前活跃的线程数
 
-* MAX-FILE-DESCRIPTOR-COUNT：the count of max file descriptor JVM process can open
-* OPEN-FILE-DESCRIPTOR-COUNT：the current count of file descriptor JVM process open
+* `DAEMON-COUNT`: JVM当前活跃的守护线程数
+
+* `PEAK-COUNT`: 从JVM启动开始曾经活着的最大线程数
+
+* `STARTED-COUNT`: 从JVM启动开始总共启动过的线程次数
+
+* `DEADLOCK-COUNT`: JVM当前死锁的线程数
+
+### 文件描述符相关
+
+* `MAX-FILE-DESCRIPTOR-COUNT`：JVM进程最大可以打开的文件描述符数
+
+* `OPEN-FILE-DESCRIPTOR-COUNT`：JVM当前打开的文件描述符数

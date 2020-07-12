@@ -1,6 +1,6 @@
 {
-  "title": "Arthas dashboard",
-  "description": "Arthas dashboard",
+  "title": "Arthas jvm",
+  "description": "Arthas jvm",
   "difficulty": "入门者",
   "time": "10-20 分钟",
   "details": {
@@ -14,8 +14,8 @@
         "text": "arthas-boot.md"
       },
       {
-        "title": "Dashboard详解",
-        "text": "dashboard.md"
+        "title": "jvm详解",
+        "text": "jvm.md"
       },
       {
         "title": "Exit/Stop",

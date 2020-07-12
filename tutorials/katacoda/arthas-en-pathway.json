@@ -27,6 +27,11 @@
         "course_id": "dashboard",
         "title": "dashboard",
         "description": "This Scenario demonstrates the usage of dashboard"
+      },
+      {
+        "course_id": "jvm",
+        "title": "jvm",
+        "description": "This Scenario demonstrates the usage of jvm"
       }
     ]
 }
