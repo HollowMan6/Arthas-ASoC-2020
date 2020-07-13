@@ -1,14 +1,12 @@
-sysprop
-=======================
 
-[点击这里访问“sysprop”在线教程](https://alibaba.github.io/arthas/arthas-tutorials.html?language=cn&id=arthas+sysprop)
+`sysprop`{{execute T2}} 命令可以查看当前JVM的系统属性(`System Property`)
 
-> 查看当前JVM的系统属性(`System Property`)
+## 使用参考
 
-### 使用参考
+`sysprop -h`{{execute T2}} 
 
 ```
- USAGE:
+USAGE:
    sysprop [-h] [property-name] [property-value]
 
  SUMMARY:
@@ -28,10 +26,11 @@ sysprop
  <property-value>                            property value
 ```
 
-#### 查看所有属性
+## 查看所有属性
 
+`sysprop`{{execute T2}} 
 
-```
+```bash
 $ sysprop
  KEY                                                  VALUE
 -------------------------------------------------------------------------------------------------------------------------------------
@@ -104,21 +103,61 @@ $ sysprop
  sun.cpu.isalist
 ```
 
-#### 查看单个属性
+## 查看单个属性
 
-> 支持通过`TAB`键自动补全
+`sysprop java.version`{{execute T2}} 
 
-```
+```bash
 $ sysprop java.version
 java.version=1.8.0_51
 ```
 
-#### 修改单个属性
+## 通过`grep`来过滤
 
-```
+`sysprop | grep user`{{execute T2}} 
+
+## 修改单个属性
+
+`sysprop user.country`{{execute T2}} 
+
+`sysprop user.country CN`{{execute T2}} 
+
+```bash
 $ sysprop user.country
 user.country=US
 $ sysprop user.country CN
 Successfully changed the system property.
 user.country=CN
 ```
+
+### 自动补全
+
+Arthas支持丰富的自动补全功能，在使用有疑惑时，可以输入`Tab`来获取更多信息。
+
+比如输入 `sysprop java.` 之后，再输入`Tab`，会补全出对应的key：
+
+```
+$ sysprop java.
+java.runtime.name             java.protocol.handler.pkgs    java.vm.version
+java.vm.vendor                java.vendor.url               java.vm.name
+...
+```
+
+### 历史命令的补全
+
+支持通过`TAB`键自动补全
+
+如果想再执行之前的命令，可以在输入一半时，按`Up/↑` 或者 `Ddown/↓`，来匹配到之前的命令。
+
+比如之前执行过`sysprop java.version`，那么在输入`sysprop ja`之后，可以输入`Up/↑`，就会自动补全为`sysprop java.version`。
+
+如果想查看所有的历史命令，也可以通过 `history`{{execute T2}} 命令查看到。
+
+
+### pipeline
+
+Arthas支持在pipeline之后，执行一些简单的命令，比如：
+
+`sysprop | grep java`{{execute T2}} 
+
+`sysprop | wc -l`{{execute T2}} 

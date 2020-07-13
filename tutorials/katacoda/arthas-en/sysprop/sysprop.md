@@ -1,14 +1,12 @@
-sysprop
-=======================
 
-[点击这里访问“sysprop”在线教程](https://alibaba.github.io/arthas/arthas-tutorials.html?language=cn&id=arthas+sysprop)
+The `sysprop`{{execute T2}} command allows you to examine the system properties from the target JVM.
 
-> 查看当前JVM的系统属性(`System Property`)
+## Usage
 
-### 使用参考
+`sysprop -h`{{execute T2}} 
 
 ```
- USAGE:
+USAGE:
    sysprop [-h] [property-name] [property-value]
 
  SUMMARY:
@@ -28,10 +26,11 @@ sysprop
  <property-value>                            property value
 ```
 
-#### 查看所有属性
+## Check all properties
 
+`sysprop`{{execute T2}} 
 
-```
+```bash
 $ sysprop
  KEY                                                  VALUE
 -------------------------------------------------------------------------------------------------------------------------------------
@@ -104,21 +103,58 @@ $ sysprop
  sun.cpu.isalist
 ```
 
-#### 查看单个属性
+## Check One Single Property
 
-> 支持通过`TAB`键自动补全
+`sysprop java.version`{{execute T2}} 
 
-```
+```bash
 $ sysprop java.version
 java.version=1.8.0_51
 ```
 
-#### 修改单个属性
+## filtered by `grep`
 
-```
+`sysprop | grep user`{{execute T2}} 
+
+## Check One Single Property
+
+`sysprop user.country`{{execute T2}} 
+
+`sysprop user.country CN`{{execute T2}} 
+
+```bash
 $ sysprop user.country
 user.country=US
 $ sysprop user.country CN
 Successfully changed the system property.
 user.country=CN
 ```
+
+### Auto completion
+
+Arthas supports a wide range of auto-completion features, and you can type `Tab` to get more information when you have doubts about your use.
+
+For example, after typing `sysprop java.`, enter `Tab`, which will complete the corresponding key:
+
+```
+$ sysprop java.
+java.runtime.name             java.protocol.handler.pkgs    java.vm.version
+java.vm.vendor                java.vendor.url               java.vm.name
+...
+```
+
+### Completion of history commands
+
+If you want to execute the previous command again, you can match the previous command by pressing `Up/↑` or `Ddown/↓` when you enter halfway.
+
+For example, if `sysprop java.version` was executed before, then after entering `sysprop ja`, you can type `Up/↑`, and it will be automatically completed as `sysprop java.version`.
+
+If you want to see all the history commands, you can also view them with the `history`{{execute T2}} command.
+
+### pipeline
+
+Arthas supports some simple commands after the pipeline, such as:
+
+`sysprop | grep java`{{execute T2}} 
+
+`sysprop | wc -l`{{execute T2}} 

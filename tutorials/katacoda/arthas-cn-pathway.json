@@ -32,6 +32,11 @@
         "course_id": "jvm",
         "title": "jvm",
         "description": "这里讲解了Arthas的jvm命令"
+      },
+      {
+        "course_id": "sysprop",
+        "title": "sysprop",
+        "description": "这里讲解了Arthas的sysprop命令"
       }
     ]
 }

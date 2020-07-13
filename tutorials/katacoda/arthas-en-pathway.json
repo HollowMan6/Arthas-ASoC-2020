@@ -32,6 +32,11 @@
         "course_id": "jvm",
         "title": "jvm",
         "description": "This Scenario demonstrates the usage of jvm"
+      },
+      {
+        "course_id": "sysprop",
+        "title": "sysprop",
+        "description": "This Scenario demonstrates the usage of sysprop"
       }
     ]
 }
