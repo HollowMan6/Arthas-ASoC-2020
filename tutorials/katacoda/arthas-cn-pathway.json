@@ -37,6 +37,11 @@
         "course_id": "sysprop",
         "title": "sysprop",
         "description": "这里讲解了Arthas的sysprop命令"
+      },
+      {
+        "course_id": "sysenv",
+        "title": "sysenv",
+        "description": "这里讲解了Arthas的sysenv命令"
       }
     ]
 }

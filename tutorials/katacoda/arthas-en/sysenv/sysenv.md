@@ -1,11 +1,9 @@
-sysenv
-=======================
 
-[Click to visit "sysenv" online tutorial](https://alibaba.github.io/arthas/arthas-tutorials.html?language=en&id=arthas+sysenv)
+The `sysenv`{{execute T2}} command allows you to view the current JVM environment variables. (Similar to `sysenv`.)
 
-> View the current JVM environment variables.
+## Usage
 
-### Usage
+`sysenv -h`{{execute T2}} 
 
 ```
  USAGE:
@@ -24,12 +22,13 @@ sysenv
  OPTIONS:
  -h, --help                                                 this help
  <env-name>                                                 env name
- ```
-
-#### View all environment variables
-
-
 ```
+
+## Check all properties
+
+`sysenv`{{execute T2}} 
+
+```bash
 $ sysenv
  KEY                      VALUE
 ----------------------------------------------------------------------------------------------------------------------------
@@ -65,11 +64,31 @@ $ sysenv
  AUTOJUMP_ERROR_PATH      /Users/admin/Library/autojump/errors.log
 ```
 
-#### View individual environment variables
+## Check One Single Property
 
-> Use `tab` for auto-completion
+`sysenv USER`{{execute T2}} 
 
-```
+```bash
 $ sysenv USER
 USER=admin
 ```
+
+### Auto completion
+
+Arthas supports a wide range of auto-completion features, and you can type `Tab` to get more information when you have doubts about your use.
+
+For example, after typing `sysenv US`, enter `Tab`, which will complete the corresponding key:
+
+```
+$ sysenv US
+USER
+...
+```
+
+### Completion of history commands
+
+If you want to execute the previous command again, you can match the previous command by pressing `Up/↑` or `Ddown/↓` when you enter halfway.
+
+For example, if `sysenv USER` was executed before, then after entering `sysenv US`, you can type `Up/↑`, and it will be automatically completed as `sysenv USER`.
+
+If you want to see all the history commands, you can also view them with the `history`{{execute T2}} command.

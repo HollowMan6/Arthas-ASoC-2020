@@ -1,11 +1,9 @@
-sysenv
-=======================
 
-[Click to visit "sysenv" online tutorial](https://alibaba.github.io/arthas/arthas-tutorials.html?language=en&id=arthas+sysenv)
+`sysenv`{{execute T2}} 命令可以查看当前JVM的环境属性(`System Property`)，与`sysprop`类似
 
-> View the current JVM environment variables.
+## 使用参考
 
-### Usage
+`sysenv -h`{{execute T2}} 
 
 ```
  USAGE:
@@ -24,12 +22,13 @@ sysenv
  OPTIONS:
  -h, --help                                                 this help
  <env-name>                                                 env name
- ```
-
-#### View all environment variables
-
-
 ```
+
+## 查看所有属性
+
+`sysenv`{{execute T2}} 
+
+```bash
 $ sysenv
  KEY                      VALUE
 ----------------------------------------------------------------------------------------------------------------------------
@@ -65,11 +64,33 @@ $ sysenv
  AUTOJUMP_ERROR_PATH      /Users/admin/Library/autojump/errors.log
 ```
 
-#### View individual environment variables
+## 查看单个属性
 
-> Use `tab` for auto-completion
+`sysenv USER`{{execute T2}} 
 
-```
+```bash
 $ sysenv USER
 USER=admin
 ```
+
+### 自动补全
+
+Arthas支持丰富的自动补全功能，在使用有疑惑时，可以输入`Tab`来获取更多信息。
+
+比如输入 `sysenv US` 之后，再输入`Tab`，会补全出对应的key：
+
+```
+$ sysenv US
+USER
+...
+```
+
+### 历史命令的补全
+
+支持通过`TAB`键自动补全
+
+如果想再执行之前的命令，可以在输入一半时，按`Up/↑` 或者 `Ddown/↓`，来匹配到之前的命令。
+
+比如之前执行过`sysenv USER`，那么在输入`sysenv US`之后，可以输入`Up/↑`，就会自动补全为`sysenv USER`。
+
+如果想查看所有的历史命令，也可以通过 `history`{{execute T2}} 命令查看到。

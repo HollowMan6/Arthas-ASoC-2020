@@ -1,6 +1,6 @@
 {
-  "title": "Arthas sysprop",
-  "description": "Arthas sysprop",
+  "title": "Arthas sysenv",
+  "description": "Arthas sysenv",
   "difficulty": "入门者",
   "time": "10-20 分钟",
   "details": {
@@ -14,8 +14,8 @@
         "text": "arthas-boot.md"
       },
       {
-        "title": "sysprop详解",
-        "text": "sysprop.md"
+        "title": "sysenv详解",
+        "text": "sysenv.md"
       },
       {
         "title": "Exit/Stop",

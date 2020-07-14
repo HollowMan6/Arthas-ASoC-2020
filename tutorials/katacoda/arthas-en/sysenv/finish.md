@@ -1,5 +1,5 @@
 
-The `sysprop Tutorial` demonstrates the usage of sysprop. If you have more tips or questions, please feel free to ask in Issue.
+The `sysenv Tutorial` demonstrates the usage of sysenv. If you have more tips or questions, please feel free to ask in Issue.
 
 * Issues: https://github.com/alibaba/arthas/issues
 * Documentation: https://alibaba.github.io/arthas

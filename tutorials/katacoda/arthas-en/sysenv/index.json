@@ -1,6 +1,6 @@
 {
-  "title": "sysprop",
-  "description": "sysprop",
+  "title": "sysenv",
+  "description": "sysenv",
   "difficulty": "master",
   "time": "10-20 minutes",
   "details": {
@@ -14,8 +14,8 @@
         "text": "arthas-boot.md"
       },
       {
-        "title": "sysprop Details",
-        "text": "sysprop.md"
+        "title": "sysenv Details",
+        "text": "sysenv.md"
       },
       {
         "title": "Exit/Stop",
